@@ -129,7 +129,7 @@ set-top box, which was equipped with a raw flash storage. For backend of the
 database we adopted Wisconsin Storage System \cite{wiss} and MiniSQL for the
 frontend \cite{minisql}. The biggest challenge was that the performance of the
 database system did not fit with the system requirement, which led us to
-reimplement the level 0 of Wisconsin Storage System to manage the raw flash
+re-implement the level 0 of Wisconsin Storage System to manage the raw flash
 directly. And we proposed an algorithm to improve the Flash Translation Layer
 by introducing a small NVRAM write buffer 
 \cite{tc}.
@@ -142,7 +142,7 @@ management layer of the database can conform to flash memory devices
 I intend to continue working in the agenda of deploying SSDs in distributed
 systems. Especially, my perspective is that eventually SSD will become
 closer to
-a non-volatile memory device, speed of which is comparable to dram,
+a non-volatile memory device, speed of which is comparable to the dram,
 rather than being a fast hard disk drive.
 Meanwhile, data-intensive web applications, such as Facebook, are migrating
 their massive amount data from disk to memory for providing fast user
