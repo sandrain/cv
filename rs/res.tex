@@ -83,7 +83,11 @@ Moreover, their relatively high price and limited lifespan place a vast
 decision space where thoughtful insight into storage systems is required,
 to achieve a both cost- and performance- efficient solution.
 
-My primary research interest is to establish a new storage system exploiting
+
+My past research was predominantly focused on building an high performance SSD
+and deployment of it in uni-core environments.
+And now my research interest is being expanded and my primary goal
+is to establish a efficient storage system exploiting
 SSD, particularly in distributed computing environments.
 
 
@@ -102,19 +106,57 @@ placing SSDs in a HPC cluster. Our work is dissimilar to existing approaches
 suggesting to place SSDs by intuition.
 We are building a theoretical model,
 based on in-depth topology analysis of a real HPC cluster, Jaguar \cite{jaguar},
-which allows us to estimate performance impact of any given placement decision
+which allows us to estimate performance impact of any given SSD placement decision
 accurately.
 
 \subsection*{Past Research Agendas}
 
-\subsubsection*{Exploiting a NVM Write Buffer in Flash Translation Layer}
+The works listed here are the projects in which I was involved during my
+Master's studies.
+
+\subsubsection*{Managing Multimedia Data for Contents Server with Hybrid
+Storage}
+The goal of this project was to build a hybrid storage system for a commercial
+video streaming service. We adopted hybrid storage system architecture utilizing
+both HDDs and SSDs. We prioritized all the contents in the server
+according to their popularity and cached most popular contents in SSDs.
+In addition to that we prototype a file system for non-volatile memory devices.
+
+\subsubsection*{Design of a Flash File System Supporting
+Transaction and Record Structure}
+This project aimed at developing a database management system running at a
+set-top box, which was equipped with a raw flash storage. For backend of the
+database we adopted Wisconsin Storage System \cite{wiss} and MiniSQL for the
+frontend \cite{minisql}. The biggest challenge was that the performance of the
+database system did not fit with the system requirement, which led us to
+reimplement the level 0 of Wisconsin Storage System to manage the raw flash
+directly. And we proposed an algorithm to improve the Flash Translation Layer
+by introducing a small NVRAM write buffer 
+\cite{tc}.
+We also presented how the buffer
+management layer of the database can conform to flash memory devices
+\cite{tce}.
 
 \subsection*{Future Research Agendas}
 
-\subsubsection*{Deploying SSDs in a Multi-Level Distributed Cache Management
-System}
+I intend to continue working in the agenda of deploying SSDs in distributed
+systems. Especially, my perspective is that eventually SSD will become
+closer to
+a non-volatile memory device, speed of which is comparable to dram,
+rather than being a fast hard disk drive.
+Meanwhile, data-intensive web applications, such as Facebook, are migrating
+their massive amount data from disk to memory for providing fast user
+experiences \cite{fb}.
+I am confident that we can build a disk IO-free and reliable
+distributed storage
+system by exploiting SSDs. More specifically, my future research topics include
+the followings, but not limited to.
 
-\subsubsection*{Filesystem for Diskless Systems}
+\begin{enumerate}
+\item Distributed Cache Management with Heterogeneous Cache Devices
+\item Distributed File System for Heterogeneous Devices
+\item Realizing a Durable Data Storage in Memory
+\end{enumerate}
 
 \vspace{0.5cm}
 %\begin{flushright}
@@ -162,8 +204,28 @@ Symposium on} 16 Apr. 2012: 1-11.
 Bland, Arthur S et al. "Jaguar: The world’s most powerful computer."
 {\it Memory (TB)} 300.62 (2009): 362.
 
+\bibitem[6]{wiss}
+Chou, H‐T et al. "Design and implementation of the Wisconsin storage system."
+{\it Software: Practice and Experience} 15.10 (2006): 943-962.
 
+\bibitem[7]{minisql}
+http://www.hughes.com.au/products/msql/
 
+\bibitem[8]{tc}
+Kang, Sooyong et al. "Performance trade-offs in using nvram write buffer for
+flash memory-based storage devices."
+{\it Computers, IEEE Transactions on} 58.6
+(2009): 744-758.
+
+\bibitem[9]{tce}
+Jung, Hoyoung et al. "LRU-WSR: integration of LRU and writes sequence
+reordering for flash memory."
+{\it Consumer Electronics, IEEE Transactions on} 54.3
+(2008): 1215-1223.
+
+\bibitem[10]{fb}
+Beaver, Doug et al. "Finding a needle in Haystack: Facebook’s photo storage."
+{\it Proc. 9th USENIX OSDI} (2010).
 
 %\bibitem[CoffmanO]{CoffmanO}
 %K. G. Coffman and A. M. Odlyzko, The size and growth rate of the Internet.
