@@ -1,4 +1,4 @@
-\section{PAST RESEARCH EXPERIENCE} 
+\section{PAST PROJECTS} 
 \vspace{0.03in}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %\vspace{-0.15in}
@@ -6,11 +6,12 @@
    {\it \footnotesize --- 2015-2016, Oak Ridge National Laboratory}
    \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a high-level data structure and a programming framework that
-             facilitate the data analysis using PIM devices.
-    \item[-] Developed a runtime system that optimizes the data placement among PIM devices.
-    \item[-] Developed a device driver which emulates PIM devices in a NUMA architecture.
-    \item[] {\small(NUMA, Pthread, Linux Kernel)}
+    \item[-] Developed a high-level programming framework that
+             facilitates the data analysis using PIM devices.
+    \item[-] Developed a runtime system that optimizes the data placement across an array of
+             PIM devices.
+    \item[-] Developed a device driver that emulates PIM devices in a NUMA architecture.
+    \item[] {\small(NUMA, Pthread, Intel TBB, Linux Kernel)}
    \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
@@ -20,9 +21,13 @@
     \setlength\itemsep{-0.02in}
     \item[-] Developed a file system-integrated metadata indexing framework
 	     that supports a user-defined tagging.
-    \item[-] Developed a storage-side data reduction and automatic metadata
+    \item[-] Developed a command-line utility that allows to run interactive file search queries
+             in SQL.
+    \item[-] Developed a computation offloading framework similar to `\fixed{find -exec}'
+	     based on the tagging.
+    \item[-] Developed an automatic metadata
 	     extraction framework based on the tagging-based file search.
-    \item[-] Implemented the prototype framework in GlusterFS and command-line utilities.
+    %\item[-] Implemented the prototype framework in GlusterFS and command-line utilities.
     \item[] {\small(GlusterFS, SQLite, Linux)}
    \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,13 +38,14 @@
     \setlength\itemsep{-0.02in}
     \item[-] Developed an active storage target framework based on SCSI T10 OSD-2
     specification.
-    \item[-] Enhanced OSD initiator driver and exofs in Linux to support the active
+    \item[-] Enhanced OSD initiator driver and exofs in Linux Kernel to support the active
     processing.
-    \item[-] Designed and developed a FUSE file system for the active OSD devices.
-    \item[-] Developed a workflow scheduler within FUSE to orchestrate scientific
+    \item[-] Designed and developed a FUSE file system that manages an array of active OSD devices.
+    \item[-] Developed a workflow manager within the file system to orchestrate scientific
     workflow tasks across an array of active OSD devices.
-    \item[-] Developed provenance management via SQLite within the file system.
-    \item[] {\small(Linux Kernel, SCSI T10 OSD-2 Protocol, FUSE, SQLite)}
+    \item[-] Developed provenance management framework with a light-weight database
+             within the file system.
+    \item[] {\small(Linux Kernel, SCSI T10 OSD-2 Protocol, Linux TGT, FUSE, SQLite)}
     \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
@@ -47,8 +53,10 @@
     {\it \footnotesize --- 2007-2009, Database Lab., Hanyang University}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a content server log analyzer to analyze content popularity.
-    \item[-] Developed a prototype Linux file system for storage class memory device.
+    \item[-] Developed a content server log analyzer to analyze content popularity
+             of a commercial media server.
+    \item[-] Developed a stripped-down file system based on ext2
+             for storage class memory devices, i.e., PRAM.
     \item[] {\small(Linux Kernel, Windows Media Server)}
     \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,13 +66,17 @@
     {\it \footnotesize --- 2006-2008, Database Lab., Hanyang University}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a framework to identify FTL mapping schemes of NAND Flash memory
-    storage devices.
-    \item[-] Developed a DBMS that directly manages the raw NAND Flash memory device.
-    \item[] {\small(Linux, Wisconsin Storage System, ARM-based embedded
-     board)}
+    \item[-] Developed a framework to identify FTL mapping schemes of NAND flash memory-based
+             storage devices.
+    \item[-] Developed a DBMS that directly manages a raw NAND flash memory chip
+             for managing EPG (Electronic Program Guide) data in a set top box.
+    \item[-] Developed a buffer management policy in PostgreSQL for NAND flash
+             memory-based storage devices.
+    \item[] {\small(Linux Kernel, Linux MTD, Wisconsin Storage System, ARM-based embedded
+     board, PostgreSQL)}
     \end{itemize}
   \vspace{-0.15in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   {\bf Construction of a Protein Function Database} 
     {\it \footnotesize --- 2006-2008, Database Lab., Hanyang University}
     \begin{itemize}[leftmargin=*]

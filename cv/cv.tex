@@ -17,6 +17,9 @@
 \cfoot{}  % the footer is empty
 \pagestyle{fancy} % set pagestyle for the document
 
+\newenvironment{fixedtt}{\fontfamily{lmtt}\selectfont}{\par}
+\DeclareTextFontCommand{\fixed}{\fixedtt\small}
+
 \begin{document} 
 \thispagestyle{empty} % this page does not have a header
 \name{HYOGI\hspace{.1in}SIM}
@@ -28,7 +31,7 @@
 %}
 \address{\small
 Oak Ridge National Laboratory, Virginia Tech \\
-\hspace{.2in}\emph{hyogi@vt.edu}, \emph{(540) 391-0202}
+\hspace{.2in}\emph{simh@ornl.gov}, \emph{(540) 391-0202}
 %One Bethel Valley Road\\
 %PO Box 2008 MS6008 \\
 %Oak Ridge, TN 37831 \\
@@ -47,12 +50,12 @@ that will both utilize and enrich my current skills.}
 \input{research-current} 
 \input{research-past} 
 \input{work}
+\input{skills}
 \input{publications}
 \input{teaching}
 \input{courses}
 \input{recognitions}
 \input{awards}
-\input{skills}
  
 \end{resume}
 \end{document}
