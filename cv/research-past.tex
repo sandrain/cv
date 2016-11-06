@@ -3,13 +3,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %\vspace{-0.15in}
   {\bf File System-Integrated Search and Discovery Services for High Performance Computing}
-   {\it \footnotesize --- 2015-2016, Virginia Tech and Oak Ridge National Laboratory}
+   {\it \footnotesize --- 2015-2016, Oak Ridge National Laboratory and Virginia Tech}
    \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a file system-integrated metadata indexing framework
-	     that supports a user-defined tagging.
-    \item[-] Developed a command-line utility that allows to run interactive file search queries
-             in SQL.
+    \item[-] Designed and developed a file system-integrated metadata indexing framework
+	     that supports a user-defined tagging in GlusterFS.
+    \item[-] Developed a command-line utility with the GlusterFS API to
+             allow interactive, tagging-based file search queries in SQL syntax.
     \item[-] Developed a computation offloading framework via a tagging-based file search,
              similar to `\fixed{find -exec}'.
     \item[-] Developed an automatic metadata
@@ -20,18 +20,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
   {\bf Analysis-Aware Storage System for High Performance Computing}
-    {\it \footnotesize --- 2013-2015, Virginia Tech and Oak Ridge National Laboratory}
+    {\it \footnotesize --- 2013-2015, Oak Ridge National Laboratory and Virginia Tech}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed an active storage target framework based on SCSI T10 OSD-2
-    specification.
-    \item[-] Enhanced OSD initiator driver and exofs in Linux Kernel to support the active
-    processing.
-    \item[-] Designed and developed a FUSE file system that manages an array of active OSD devices.
-    \item[-] Developed a workflow manager within the file system to orchestrate scientific
-    workflow tasks across an array of active OSD devices.
-    \item[-] Developed a provenance management framework with a light-weight database
-             within the file system.
+    \item[-] Developed an active code execution framework on the Linux TGT implementation
+             based on the extended SCSI T10 OSD-2 specification.
+    \item[-] Extended the OSD initiator driver and exofs in Linux Kernel to support the active
+             processing.
+    \item[-] Designed and developed a FUSE file system that manages
+             the array of active OSD devices.
+    \item[-] Integrated a workflow manager within the file system to schedule scientific
+    workflow tasks across the array of active OSD devices.
+    \item[-] Developed a provenance management framework based on the OSD-2 object abstraction
+             and the database integration in the FUSE file system.
+             %with a light-weight database within the file system.
     \item[] {\small(Linux Kernel, SCSI T10 OSD-2 Protocol, Linux TGT, FUSE, SQLite)}
     \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
