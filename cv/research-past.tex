@@ -2,13 +2,13 @@
 \vspace{0.03in}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %\vspace{-0.15in}
-  {\bf File System-Integrated Search and Discovery Services for High Performance Computing}
-   {\it \footnotesize --- 2015-2016, Oak Ridge National Laboratory and Virginia Tech}
+  {\bf File System-Integrated Search and Discovery Services for HPC}
+   {\it \footnotesize --- 2015-2016, Oak Ridge National Lab. and Virginia Tech}
    \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
     \item[-] Designed and developed a file system-integrated metadata indexing framework
-	     that supports a user-defined tagging in GlusterFS.
-    \item[-] Developed a command-line utility with the GlusterFS API to
+	     that supports the user-defined tagging in GlusterFS.
+    \item[-] Developed a command-line utility using the GlusterFS API to
              allow interactive, tagging-based file search queries in SQL syntax.
     \item[-] Developed a computation offloading framework via a tagging-based file search,
              similar to `\fixed{find -exec}'.
@@ -19,50 +19,56 @@
    \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
-  {\bf Analysis-Aware Storage System for High Performance Computing}
-    {\it \footnotesize --- 2013-2015, Oak Ridge National Laboratory and Virginia Tech}
+  {\bf Analysis-Aware Storage System for HPC}
+    {\it \footnotesize --- 2013-2015, Oak Ridge National Lab. and Virginia Tech}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed an active code execution framework on the Linux TGT implementation
-             based on the extended SCSI T10 OSD-2 specification.
-    \item[-] Extended the OSD initiator driver and exofs in Linux Kernel to support the active
-             processing.
+    \item[-] Designed an active execution framework based on SCSI T10 OSD-2 specification
+             and implemented the extended OSD-2 protocol the on the Linux TGT.
+    \item[-] Extended the host-side OSD initiator driver and exofs in Linux Kernel
+             to support the active execution framework.
     \item[-] Designed and developed a FUSE file system that manages
              the array of active OSD devices.
-    \item[-] Integrated a workflow manager within the file system to schedule scientific
-    workflow tasks across the array of active OSD devices.
-    \item[-] Developed a provenance management framework based on the OSD-2 object abstraction
-             and the database integration in the FUSE file system.
-             %with a light-weight database within the file system.
+    \item[-] Integrated a workflow manager within the file system to support scientific
+             workflow processing across the array of active OSD devices.
+    \item[-] Developed a provenance management framework
+             with a light-weight database within the FUSE file system
+             based on the OSD-2 object abstraction
     \item[] {\small(Linux Kernel, SCSI T10 OSD-2 Protocol, Linux TGT, FUSE, SQLite)}
     \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
-  {\bf Managing Multimedia Data for Content Servers with Hybrid Storage Architecture}
+  %{\bf Managing Multimedia Data for Content Servers with Hybrid Storage Architecture}
+  {\bf Hierarchical Data Management in Media Servers with Hybrid Storage Architecture}
     {\it \footnotesize --- 2007-2009, Database Lab., Hanyang University}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a content server log analyzer to analyze content popularity
-             of a commercial media server.
-    \item[-] Developed a stripped-down file system based on ext2
-             for storage class memory devices, i.e., PRAM.
+    \item[-] Developed a content popularity analyzer that periodically analyzes 
+             request log files and ranks highly requested contents
+             in a commercial media server running Windows Media Server.
+    \item[-] Developed a light-weight file system based on ext2
+             for the caching servers equipped with 
+             storage class memory devices, e.g., PRAM.
     \item[] {\small(Linux Kernel, Windows Media Server)}
     \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \vspace{-0.15in}
-  {\bf Design of a NAND Flash Memory-Based File System Supporting Transaction and
+  {\bf Development of a NAND Flash Memory-Based File System Supporting Transaction and
       Record Structure} 
     {\it \footnotesize --- 2006-2008, Database Lab., Hanyang University}
     \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.02in}
-    \item[-] Developed a framework to identify FTL mapping schemes of NAND flash memory-based
-             storage devices.
-    \item[-] Developed a DBMS that directly manages a raw NAND flash memory chip
-             for managing EPG (Electronic Program Guide) data in a set top box.
-    \item[-] Developed a buffer management policy in PostgreSQL for NAND flash
-             memory-based storage devices.
-    \item[] {\small(Linux Kernel, Linux MTD, Wisconsin Storage System, ARM-based embedded
-     board, PostgreSQL)}
+    \item[-] Developed a DBMS that integrates FTL and directly manages a raw NAND flash
+             memory chip via Linux MTD layer for managing EPG (Electronic Program Guide)
+             data in a set top box.
+    \item[-] Developed a flash-aware buffer management policy in PostgreSQL
+             to generates a flash-friendly LBA sequence for NAND flash memory.
+    \item[-] Developed a software framework that generates a set of pre-defined I/O requests
+	     and identifies a FTL mapping algorithm, e.g., page- or block-level mapping,
+             of a NAND flash memory-based
+             storage device.
+    \item[] {\small(Linux Kernel, Linux MTD, Wisconsin Storage System, PostgreSQL,
+             ARM-based embedded board)}
     \end{itemize}
   %\vspace{-0.15in}
 
