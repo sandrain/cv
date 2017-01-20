@@ -28,7 +28,7 @@ display: $(TARGET)
 pdf: $(TARGET)
 	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
 	$(PDF) $(TARGET).ps
-	cp cv.pdf hyogisim-cv-201611.pdf
+	cp cv.pdf hyogisim-cv-201701.pdf
 
 $(TARGET): $(TARGET).tex
 	latex $(TARGET)
