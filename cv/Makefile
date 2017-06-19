@@ -18,6 +18,8 @@ ifeq ($(UNAME), Darwin)
 	VIEWER := open
 endif
 
+TODAY = $(shell date +%Y%m)
+
 all:    pdf
 
 display: $(TARGET)
@@ -28,7 +30,7 @@ display: $(TARGET)
 pdf: $(TARGET)
 	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
 	$(PDF) $(TARGET).ps
-	cp cv.pdf hyogisim-cv-201702.pdf
+	cp cv.pdf hyogisim-cv-$(TODAY).pdf
 
 $(TARGET): $(TARGET).tex
 	latex $(TARGET)
