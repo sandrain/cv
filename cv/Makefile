@@ -32,6 +32,9 @@ pdf: $(TARGET)
 	$(PDF) $(TARGET).ps
 	cp cv.pdf hyogisim-cv-$(TODAY).pdf
 
+final: pdf
+	cp -f hyogisim-cv-$(TODAY).pdf final/
+
 $(TARGET): $(TARGET).tex
 	latex $(TARGET)
 	latex $(TARGET)
