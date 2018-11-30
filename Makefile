@@ -31,15 +31,10 @@ pdflatex: $(TARGET).tex
 	pdflatex $(TARGET)
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(TARGET).log) \
 	do pdflatex $(TARGET); done
-	cp cv.pdf hyogisim-cv-$(TODAY).pdf
+	cp cv.pdf cv/hyogisim-cv-$(TODAY).pdf
 
-pdf: $(TARGET)
-	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
-	$(PDF) $(TARGET).ps
-	cp cv.pdf hyogisim-cv-$(TODAY).pdf
-
-cv: pdf
-	cp -f hyogisim-cv-$(TODAY).pdf cv/
+scp: pdflatex 
+	scp cv/hyogisim-cv-$(TODAY).pdf hyogi@rlogin.cs.vt.edu:/home/grads/hyogi/WWW/people.cs.vt.edu
 
 clean:
 	$(RM) $(TARGET).ps $(TARGET).pdf $(TARGET).log $(TARGET).aux \
