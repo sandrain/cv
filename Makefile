@@ -3,8 +3,6 @@
 #
 
 .SUFFIXES: .tex .dvi .ps .fig .eps .gnu .c
-#PDF = ps2pdf -dPDFSETTINGS=/printer -dMaxSubsetPct=100 \
-#      -dCompatibilityLevel=1.4 -dSubsetFonts=true -dEmbedAllFonts=true
 PDF = ps2pdf14 -dPDFSETTINGS=/prepress -dEmbedAllFonts=true \
       -dSubsetFonts=true -dMaxSubsetPct=100
 
@@ -20,25 +18,28 @@ endif
 
 TODAY = $(shell date +%Y%m)
 
-all:    pdf
+all: pdflatex
 
 display: $(TARGET)
 	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
 	$(PDF) $(TARGET).ps
 	$(VIEWER) $(TARGET).pdf
 
+pdflatex: $(TARGET).tex
+	pdflatex $(TARGET)
+	pdflatex $(TARGET)
+	pdflatex $(TARGET)
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(TARGET).log) \
+	do pdflatex $(TARGET); done
+	cp cv.pdf hyogisim-cv-$(TODAY).pdf
+
 pdf: $(TARGET)
 	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
 	$(PDF) $(TARGET).ps
 	cp cv.pdf hyogisim-cv-$(TODAY).pdf
 
-final: pdf
-	cp -f hyogisim-cv-$(TODAY).pdf final/
-
-$(TARGET): $(TARGET).tex
-	latex $(TARGET)
-	latex $(TARGET)
-	latex $(TARGET)
+cv: pdf
+	cp -f hyogisim-cv-$(TODAY).pdf cv/
 
 clean:
 	$(RM) $(TARGET).ps $(TARGET).pdf $(TARGET).log $(TARGET).aux \
