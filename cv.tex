@@ -1,64 +1,86 @@
-% LaTeX resume using res.cls
-\documentclass{res}
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-\usepackage{times} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font  
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{url}
-\usepackage{comment}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{times}
+\usepackage[english]{babel}
 
-\setlength{\topmargin}{-0.6in}  % Start text higher on the page 
-\setlength{\textheight}{9.8in}  % increase textheight to fit more on a page
-\setlength{\headsep}{0.07in}     % space between header and text
-\setlength{\headheight}{10pt}   % make room for header
-\usepackage{fancyhdr}  % use fancyhdr package to get 2-line header
-\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
-\lhead{\hspace*{-\sectionwidth}Hyogi Sim {\small \emph{- simh@ornl.gov}}} % force lhead all the way left
-\rhead{Page \thepage}  % put page number at right
-\cfoot{}  % the footer is empty
-\pagestyle{fancy} % set pagestyle for the document
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\newenvironment{fixedtt}{\fontfamily{lmtt}\selectfont}{\par}
-\DeclareTextFontCommand{\fixed}{\fixedtt\small}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-\begin{document} 
-\thispagestyle{empty} % this page does not have a header
-\name{HYOGI\hspace{.1in}SIM}
-%\vspace{0.07in}
-%\address{
-%{\tt \small hyogi@vt.edu}, (540) 391-0202 \\
-%Dept. of Computer Science, Virginia Tech\\
-%2202 Kraft Drive, Blacksburg, VA 24060\\
-%}
-\address{\small
-\hspace{.26in}Oak Ridge National Laboratory \\ %, Virginia Tech \\
-\hspace{.15in}\emph{simh@ornl.gov}, \emph{(865) 574-6167}
-%One Bethel Valley Road\\
-%PO Box 2008 MS6008 \\
-%Oak Ridge, TN 37831 \\
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
 }
 
-\begin{resume}
-\vspace{0.01in}
-%\moveleft.5\sectionwidth\centerline{
-%{\small \it Objective: To obtain a research and development position 
-%that will both utilize and enrich my current skills.}
-%}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document} 
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+	\textbf{\Large Hyogi Sim} & Email : {\emph{simh@ornl.gov}}\\
+	{Oak Ridge National Laboratory} & Office : +1-865-574-6167 \\
+\end{tabular*}
 
 \input{current}
-\input{education} 
-\input{work}
-\input{interests} 
-%\input{research-current} 
-\input{research-past} 
-\input{research-other}
-%\input{skills}
-\input{publications}
-\input{recognitions}
-\input{courses}
-\input{teaching}
-\input{awards}
+%\input{education} 
+%\input{work}
+%\input{interests} 
+%%\input{research-current} 
+%\input{research-past} 
+%\input{research-other}
+%%\input{skills}
+%\input{publications}
+%\input{recognitions}
+%\input{courses}
+%\input{teaching}
+%\input{awards}
  
-\end{resume}
 \end{document}
 
