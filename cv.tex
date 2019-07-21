@@ -10,7 +10,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{times}
+\usepackage{amssymb}
 \usepackage[english]{babel}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -33,33 +35,23 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-4pt}\scshape\raggedright\large\bf
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
+\newcommand{\cvitem}[2]{
+ \vspace{.02in}{#1}\hfill{\small{\it #2}}
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+\newcommand{\cvtext}[2]{
+ \vspace{.02in}{#1} {\small{#2}}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\setlist{nolistsep,leftmargin=.22in,itemsep=-.02in}
 
-\renewcommand{\labelitemii}{$\circ$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\renewcommand{\labelitemi}{$\circ$}
+%\renewcommand{\labelitemii}{+}
+%\renewcommand{\labelitemiii}{$\circ$}
+	%\renewcommand{\labelitemiv}{$\bullet$}
 
 \begin{document} 
 
@@ -69,18 +61,17 @@
 \end{tabular*}
 
 \input{current}
-%\input{education} 
-%\input{work}
-%\input{interests} 
+\input{education} 
+\input{work}
+\input{skills} 
+\input{publications}
+\input{recognitions}
+\input{courses}
+\input{teaching}
+\input{awards}
 %%\input{research-current} 
 %\input{research-past} 
 %\input{research-other}
-%%\input{skills}
-%\input{publications}
-%\input{recognitions}
-%\input{courses}
-%\input{teaching}
-%\input{awards}
  
 \end{document}
 
