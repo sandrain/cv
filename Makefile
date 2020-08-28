@@ -32,6 +32,7 @@ pdflatex: $(TARGET).tex
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $(TARGET).log) \
 	do pdflatex $(TARGET); done
 	cp cv.pdf cv/hyogisim-cv-$(TODAY).pdf
+	cp -f cv.pdf docs/hyogisim-cv.pdf
 
 scp: pdflatex 
 	scp cv/hyogisim-cv-$(TODAY).pdf hyogi@rlogin.cs.vt.edu:/home/grads/hyogi/WWW/people.cs.vt.edu
