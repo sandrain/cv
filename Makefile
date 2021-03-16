@@ -10,9 +10,8 @@ TARGET=cv
 
 SPELL := aspell -a
 UNAME := $(shell uname)
-VIEWER := evince
+VIEWER := atril
 ifeq ($(UNAME), Darwin)
-	#VIEWER := open -a Skim
 	VIEWER := open
 endif
 
@@ -33,9 +32,6 @@ pdflatex: $(TARGET).tex
 	do pdflatex $(TARGET); done
 	cp cv.pdf cv/hyogisim-cv-$(TODAY).pdf
 	cp -f cv.pdf docs/hyogisim-cv.pdf
-
-scp: pdflatex 
-	scp cv/hyogisim-cv-$(TODAY).pdf hyogi@rlogin.cs.vt.edu:/home/grads/hyogi/WWW/people.cs.vt.edu
 
 clean:
 	$(RM) $(TARGET).ps $(TARGET).pdf $(TARGET).log $(TARGET).aux \
