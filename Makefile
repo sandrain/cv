@@ -17,12 +17,22 @@ endif
 
 TODAY = $(shell date +%Y%m)
 
-all: pdflatex
+all: pdflatex pub
 
 display: $(TARGET)
 	dvips -Ppdf -Pcmz -Pamz -t letter -D600 -G0 -o $(TARGET).ps $(TARGET).dvi
 	$(PDF) $(TARGET).ps
 	$(VIEWER) $(TARGET).pdf
+
+hyogisim-publications.pdf: hyogisim-publications.tex head.tex publications.tex presentations.tex
+	pdflatex hyogisim-publications
+	pdflatex hyogisim-publications
+	pdflatex hyogisim-publications
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' hyogisim-publications.log) \
+	do pdflatex $(TARGET); done
+	cp hyogisim-publications.pdf pub/hyogisim-publications-$(TODAY).pdf
+
+pub: hyogisim-publications.pdf
 
 pdflatex: $(TARGET).tex
 	pdflatex $(TARGET)
